@@ -11,18 +11,17 @@ function drawNames() {
     if (giverList.length < 3) {
         alert('Enter more names!');
     } else {
-        const receivers = [...giverList];
+        let receivers = [...giverList];
         let matches = {};
 
         for (let i = 0; i < giverList.length; i++) {
-            let n = Math.floor(Math.random() * giverList.length);
+            let n = Math.floor(Math.random() * receivers.length);
             let randomPick = receivers[n];
             let objValues = Object.values(matches);
 
             if (!objValues.includes(randomPick) && giverList[i] !== randomPick) {
                 matches[giverList[i]] = randomPick;
-            } else {
-                i--;
+                receivers = receivers.filter(name => name !== randomPick)
             }
         }
         revealMatches(matches);
