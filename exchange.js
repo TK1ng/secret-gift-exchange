@@ -8,20 +8,21 @@ function drawNames() {
             giverList.push(input.value)
     });
 
-    if (giverList.length < 3) {
+    f (giverList.length < 3) {
         alert('Enter more names!');
     } else {
-        let receivers = [...giverList];
+        const receivers = [...giverList];
         let matches = {};
 
         for (let i = 0; i < giverList.length; i++) {
-            let n = Math.floor(Math.random() * receivers.length);
+            let n = Math.floor(Math.random() * giverList.length);
             let randomPick = receivers[n];
             let objValues = Object.values(matches);
 
             if (!objValues.includes(randomPick) && giverList[i] !== randomPick) {
                 matches[giverList[i]] = randomPick;
-                receivers = receivers.filter(name => name !== randomPick)
+            } else {
+                i--;
             }
         }
         revealMatches(matches);
