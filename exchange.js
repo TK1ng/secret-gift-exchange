@@ -11,7 +11,7 @@ function drawNames() {
     if (giverList.length < 3) {
         alert('Enter more names!');
     } else {
-        let receivers = [...giverList];
+        const receivers = [...giverList];
         let matches = {};
 
         for (let i = 0; i < giverList.length; i++) {
@@ -21,7 +21,8 @@ function drawNames() {
 
             if (!objValues.includes(randomPick) && giverList[i] !== randomPick) {
                 matches[giverList[i]] = randomPick;
-                receivers = receivers.filter(name => name !== randomPick);
+            } else {
+                i--;
             }
         }
         revealMatches(matches);
