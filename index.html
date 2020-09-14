@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Gift Exchange</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <img src="rg_logo.png" width="60%" />
+        <h1> SECRET GIFT EXCHANGE</h1>
+        <div class="entries">
+            <h2>Enter names of participants:</h2>
+            <fieldset class="names">
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+                <input type="text" placeholder="Enter name"><br>
+            </fieldset>
+            <a href="javascript:void(0)" class="add-names" onclick="addInputFields()">Add more names</a>
+        </div>
+        <button class="draw-btn" onclick="drawNames()">Draw names</button>
+        <!-- <div class="gift-exchange-details">
+            <h2>Set up gift exchange details</h2>
+            <label>Group name</label>
+            <input type="text" placeholder="Enter a title for the gift exchange">
+            <label>Budget <span>- optional</span></label>            
+        </div> -->
+        <div class="results">
+            <div class="matched-names">
+                <p>Find the gift giver's name in bold and their secret gift buddy directly below their name.</p>
+                <hr>
+            </div>
+            <a href="javascript:void(0)" class="reset" onclick="location.reload()">Draw again</a>
+        </div>
+    </div>
+    <footer>
+        <p class="attribution">Made with <span class="heart">♥️</span> by <a href="https://www.kingcodes.dev"
+                target="_blank">King</a></p>
+    </footer>
+    <script src="exchange.js"></script>
+</body>
+
+</html>
